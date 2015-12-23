@@ -6,13 +6,7 @@ node_js:
   - 0.12
 
 env:
-  global:
-    - FOO=FUBU
-    - BOO=BUBU
-
-  matrix:
-    - M1=ONE
-    - M2=TWO
+  - FOO=FUBU
 
 build:
   pre_build:
