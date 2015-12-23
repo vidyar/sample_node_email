@@ -1,36 +1,33 @@
 # Language setting
 language: node_js
 
-build_image: drydock/u12nod:prod
-
 # Version number
 node_js:
   - 0.12
 
-# The path for Xunit to output test reports
 env:
-  - XUNIT_FILE=shippable/testresults/result.xml
+  global:
+    - FOO=FUBU
+    - BOO=BUBU
 
-install:
-  - source ~/.nvm/nvm.sh && nvm install 0.12
-  - node --version
-  - npm install
-#  - . installMongo.sh
-#  - cat /etc/mongod.conf
-#  - sudo mongod --smallfiles &
-#  - sleep 15
-#  - mongo --eval 'db.collection.find()'
+  matrix:
+    - M1=ONE
+    - M2=TWO
 
-# Create directories for test and coverage reports
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
+build:
+  pre_build:
+    before_script:
+      - ls
+      - ls -al
 
-# Running the tests with grunt
-script:
-  - grunt
+    script:
+      - sudo . .bashrc
 
-# Tell istanbul to generate a coverage report
-after_script:
-  - ./node_modules/.bin/istanbul cover grunt -- -u tdd
-  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+    after_script:
+      - ps -eax
+
+    on_success:
+      - sudo ls /
+
+    on_failure:
+      - df -h
