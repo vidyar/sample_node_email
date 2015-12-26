@@ -6,7 +6,13 @@ node_js:
   - 0.12
 
 env:
-  - FOO=FUBU
+  global:
+    - FOO=FUBU
+    - BOO=BUBU
+
+  matrix:
+    - M1=ONE
+    - M2=TWO
 
 build:
   pre_build:
@@ -15,7 +21,7 @@ build:
       - ls -al
 
     script:
-      - sudo . .bashrc
+      - sudo
 
     after_script:
       - ps -eax
@@ -25,3 +31,23 @@ build:
 
     on_failure:
       - df -h
+
+integrations:
+  notifications:
+    slack:
+      projectIntegrationName:
+      branches:
+        only:
+          - master
+  hub:
+    docker:
+      projectIntegrationName:
+      branches:
+        only:
+          - master
+  deploy:
+    aws:
+      projectIntegrationName:
+      branches:
+        only:
+          - master
