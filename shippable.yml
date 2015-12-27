@@ -6,13 +6,7 @@ node_js:
   - 0.12
 
 env:
-  global:
-    - FOO=FUBU
-    - BOO=BUBU
-
-  matrix:
-    - M1=ONE
-    - M2=TWO
+  - M1=ONE
 
 build:
   pre_build:
@@ -33,7 +27,7 @@ build:
       - df -h
 
 integrations:
-  notifications:
+  notification:
     slack:
       projectIntegrationName:
       branches:
