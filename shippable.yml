@@ -45,20 +45,24 @@ deploy:
 
 integrations:
   notification:
-    projectIntegration:
-      name: haha
-      branches:
-        only:
-          - master
+    - haha:
+      type: slack
+        recepients:
+          - aaa
+          - bbb
+        branches:
+          only:
+            - master
+
   hub:
-    projectIntegration:
-      name: fub
+    - fub:
+      type: docker
       branches:
         only:
           - master
   deploy:
-    projectIntegration:
-      name: ploy
+    - ploy:
+      type: docker
       branches:
         only:
           - master
