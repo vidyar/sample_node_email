@@ -45,7 +45,8 @@ deploy:
 
 integrations:
   notification:
-    - slack: haha
+    - integrationName: haha
+      type: slack
       recepients:
         - aaa
         - bbb
@@ -53,7 +54,8 @@ integrations:
         only:
           - master
 
-    - slack: blahblah
+    - integrationName: blah
+      type: slack
       recepients:
         - xxxx
       branches:
@@ -61,14 +63,14 @@ integrations:
           - test
 
   hub:
-    - fub:
+    - integrationName: fuc
       type: docker
       branches:
         only:
           - master
   deploy:
-    - ploy:
-      type: docker
+    - integrationName: ploy
+      type: aws
       branches:
         only:
           - master
