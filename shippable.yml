@@ -30,6 +30,12 @@ build:
     on_success:
       - sudo ls /
 
+deploy:
+  pre_build:
+    before_script:
+      - ls
+      - ls -al
+
 integrations:
   notification:
     projectIntegration:
