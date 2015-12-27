@@ -14,17 +14,21 @@ build:
       - ls
       - ls -al
 
+  infra:
+    on_failure:
+      - df -h
+
+  post_build:
     script:
       - sudo
 
+  ci:
     after_script:
       - ps -eax
 
+  smoke_test:
     on_success:
       - sudo ls /
-
-    on_failure:
-      - df -h
 
 integrations:
   notification:
