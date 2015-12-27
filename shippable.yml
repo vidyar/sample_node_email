@@ -28,20 +28,21 @@ build:
 
 integrations:
   notification:
-    slack:
-      projectIntegrationName:
+    projectIntegrationName: haha
       branches:
         only:
           - master
+    projectIntegrationName: blah
+      branches:
+        only:
+          - test
   hub:
-    docker:
-      projectIntegrationName:
-      branches:
-        only:
-          - master
+    projectIntegrationName:
+    branches:
+      only:
+        - master
   deploy:
-    aws:
-      projectIntegrationName:
-      branches:
-        only:
-          - master
+    projectIntegrationName:
+    branches:
+      only:
+        - master
