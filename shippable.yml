@@ -45,14 +45,21 @@ deploy:
 
 integrations:
   notification:
-    - haha:
-      type: slack
+    - slack: haha
       recepients:
         - aaa
         - bbb
       branches:
         only:
           - master
+
+    - slack: blahblah
+      recepients:
+        - xxxx
+      branches:
+        only:
+          - test
+
   hub:
     - fub:
       type: docker
