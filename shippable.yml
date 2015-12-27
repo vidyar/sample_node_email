@@ -47,13 +47,12 @@ integrations:
   notification:
     - haha:
       type: slack
-        recepients:
-          - aaa
-          - bbb
-        branches:
-          only:
-            - master
-
+      recepients:
+        - aaa
+        - bbb
+      branches:
+        only:
+          - master
   hub:
     - fub:
       type: docker
