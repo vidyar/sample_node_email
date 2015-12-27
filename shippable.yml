@@ -28,21 +28,25 @@ build:
 
 integrations:
   notification:
-    projectIntegrationName: haha
+    projectIntegration:
+      name: haha
       branches:
         only:
           - master
-    projectIntegrationName: blah
+    projectIntegration:
+      name: blah
       branches:
         only:
           - test
   hub:
-    projectIntegrationName:
+    projectIntegration:
+      name: fub
       branches:
         only:
           - master
   deploy:
-    projectIntegrationName:
+    projectIntegration:
+      name: ploy
       branches:
         only:
           - master
