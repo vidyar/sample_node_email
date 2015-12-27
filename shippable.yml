@@ -32,13 +32,17 @@ integrations:
       branches:
         only:
           - master
+    projectIntegrationName: blah
+      branches:
+        only:
+          - test
   hub:
     projectIntegrationName:
-    branches:
-      only:
-        - master
+      branches:
+        only:
+          - master
   deploy:
     projectIntegrationName:
-    branches:
-      only:
-        - master
+      branches:
+        only:
+          - master
