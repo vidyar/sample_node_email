@@ -50,11 +50,6 @@ integrations:
       branches:
         only:
           - master
-    projectIntegration:
-      name: blah
-      branches:
-        only:
-          - test
   hub:
     projectIntegration:
       name: fub
