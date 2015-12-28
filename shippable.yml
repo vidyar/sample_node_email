@@ -45,31 +45,30 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: haha
+    - integrationName: slk-avi
       type: slack
       recepients:
-        - aaa
-        - bbb
+        - prod
       branches:
         only:
           - master
 
-    - integrationName: blah
+    - integrationName: slk-avi
       type: slack
       recepients:
-        - xxxx
+        - beta
       branches:
         only:
           - test
 
   hub:
-    - integrationName: fuc
+    - integrationName: dock-avi
       type: docker
       branches:
         only:
           - master
   deploy:
-    - integrationName: ploy
+    - integrationName: aws-avi
       type: aws
       branches:
         only:
