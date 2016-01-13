@@ -16,31 +16,21 @@ env:
     - M2=TWO
 
 build:
-  pre_build:
-    - ls
-    - ls -al
-
-  post_build:
-    - sudo ls /
+  pre_ci:
+    - docker build -t=avinci/sample_node .
 
   pre_ci_boot:
-    image_name: drydock/u14nod
-    image_tag: prod
-    pull: true
-    envs: 'FOO=true BOO=false'
-    options: '--privileged=true --net=bridge'
+    image_name: avinci/sample_node
+    image_tag: latest
+    pull: false
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - ps -eax
     - ls -al
 
-  smoke_test:
-    - sudo ls /
-
-deploy:
-  pre_build:
-    - ls
-    - ls -al
+  post_ci:
+    - docker push avinci/sample_node
 
 integrations:
   notification:
@@ -51,24 +41,9 @@ integrations:
       branches:
         only:
           - master
-
-    - integrationName: slk-avi
-      type: slack
-      recepients:
-        - beta
-      branches:
-        only:
-          - test
-
   hub:
     - integrationName: dock-avi
       type: docker
-      branches:
-        only:
-          - master
-  deploy:
-    - integrationName: aws-avi
-      type: aws
       branches:
         only:
           - master
