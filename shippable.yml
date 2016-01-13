@@ -42,7 +42,7 @@ integrations:
         only:
           - master
   hub:
-    - integrationName: dock-avi
+    - integrationName: slk-dock
       type: docker
       branches:
         only:
