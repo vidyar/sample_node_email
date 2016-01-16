@@ -8,7 +8,7 @@ node_js:
 env:
   global:
     - FOO=FUBU
-    
+
   matrix:
     - M1=ONE
 
@@ -30,16 +30,8 @@ build:
     - docker push avinci/sample_node
 
 integrations:
-  notification:
-    - integrationName: slk-avi
-      type: slack
-      recepients:
-        - prod
-      branches:
-        only:
-          - master
   hub:
-    - integrationName: dock-avi
+    - integrationName: dock-avl
       type: docker
       branches:
         only:
