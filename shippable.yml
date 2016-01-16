@@ -14,13 +14,4 @@ env:
 build:
   pre_ci:
     - docker build -t=avinci/sample_node .
-
-  pre_ci_boot:
-    image_name: avinci/sample_node
-    image_tag: latest
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
-  ci:
-    - ps -eax
-    - ls -al
+    
