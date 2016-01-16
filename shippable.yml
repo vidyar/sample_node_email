@@ -8,10 +8,39 @@ node_js:
 env:
   global:
     - FOO=FUBU
+    
   matrix:
     - M1=ONE
 
 build:
   pre_ci:
     - docker build -t=avinci/sample_node .
-    
+
+  pre_ci_boot:
+    image_name: avinci/sample_node
+    image_tag: latest
+    pull: false
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+
+  ci:
+    - ps -eax
+    - ls -al
+
+  post_ci:
+    - docker push avinci/sample_node
+
+integrations:
+  notification:
+    - integrationName: slk-avi
+      type: slack
+      recepients:
+        - prod
+      branches:
+        only:
+          - master
+  hub:
+    - integrationName: dock-avi
+      type: docker
+      branches:
+        only:
+          - master
