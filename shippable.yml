@@ -31,7 +31,7 @@ build:
 
 integrations:
   hub:
-    - integrationName: dock-avl
+    - integrationName: dock-avi
       type: docker
       branches:
         only:
