@@ -35,6 +35,7 @@ integrations:
           type: email
           recipients:
             - shiphitchcock2@gmail.com
+            - vidyac.raghav@gmail.com
           on_start: always 
           on_success: always
           on_failure: always
