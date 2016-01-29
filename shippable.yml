@@ -3,7 +3,7 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.6
+  - 0.12
 
 env:
   global:
@@ -35,7 +35,7 @@ integrations:
           type: email
           recipients:
             - shiphitchcock2@gmail.com
-            - vidyac.raghav@gmail.com
+            - vidya@shippable.com
           on_start: always 
           on_success: always
           on_failure: always
