@@ -36,6 +36,8 @@ integrations:
           recipients:
             - shiphitchcock2@gmail.com
           on_start: always 
+          on_success: always
+          on_failure:always
   hub:
     - integrationName: ship-docker
       type: docker
