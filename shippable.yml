@@ -14,10 +14,10 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=shippabledocker/sample_node .
+    - docker build -t=shippabledocker/shiphitchcock2_sample_node .
 
   pre_ci_boot:
-    image_name: shippabledocker/sample_node
+    image_name: shippabledocker/shiphitchcock2_sample_node
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -27,7 +27,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/sample_node
+    - docker push shippabledocker/shiphitchcock2_sample_node
 
 integrations:
   hub:
