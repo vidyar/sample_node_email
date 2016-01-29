@@ -3,7 +3,7 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.12
+  - 0.6
 
 env:
   global:
@@ -30,6 +30,12 @@ build:
     - docker push shippabledocker/shiphitchcock2_sample_node
 
 integrations:
+  notifications:
+        - integrationName: 
+          type: email
+          recipients
+            - shiphitchcock2@gmail.com
+          on_start: always 
   hub:
     - integrationName: ship-docker
       type: docker
