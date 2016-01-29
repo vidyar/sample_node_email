@@ -33,7 +33,7 @@ integrations:
   notifications:
         - integrationName: 
           type: email
-          recipients
+          recipients:
             - shiphitchcock2@gmail.com
           on_start: always 
   hub:
